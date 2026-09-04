@@ -1,7 +1,7 @@
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
-import { NAV_LINKS, WHATSAPP_LINK } from "../data/site";
+import { NAV_LINKS, PHONE_DISPLAY, PHONE_TEL, WHATSAPP_LINK } from "../data/site";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -60,6 +60,13 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3">
+            <a
+              href={`tel:${PHONE_TEL}`}
+              className="hidden items-center gap-1.5 text-xs font-semibold text-muted transition-colors duration-200 hover:text-brand xl:inline-flex"
+            >
+              <Phone className="h-3.5 w-3.5" aria-hidden="true" />
+              {PHONE_DISPLAY}
+            </a>
             <a
               href={WHATSAPP_LINK}
               target="_blank"

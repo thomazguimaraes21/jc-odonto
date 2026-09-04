@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import BigWord from "./components/BigWord";
 import Cta from "./components/Cta";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Location from "./components/Location";
@@ -36,6 +37,7 @@ function App() {
         <Cta />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </>
   );
 }

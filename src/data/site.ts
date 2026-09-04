@@ -7,6 +7,7 @@ export const WHATSAPP_MESSAGE = "Olá! Gostaria de agendar uma consulta na JC Od
 export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 export const PHONE_DISPLAY = "(11) 97131-3428";
+export const PHONE_TEL = `+${WHATSAPP_NUMBER}`;
 
 export const INSTAGRAM_URL = "https://www.instagram.com/jcodontobarueri/";
 export const INSTAGRAM_HANDLE = "@jcodontobarueri";
