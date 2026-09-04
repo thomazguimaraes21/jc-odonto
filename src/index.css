@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #0077b6;
+  --color-brand-dark: #005f8f;
+  --color-ink: #171717;
+  --color-muted: #606060;
+  --color-muted-2: #9a9a9a;
+  --color-offwhite: #f5f7f8;
+  --color-border: rgba(23, 23, 23, 0.1);
+  --color-border-strong: rgba(23, 23, 23, 0.18);
+
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== Motion: revelação por scroll (fallback seguro por padrão) ===== */
+.reveal-item {
+  opacity: 1;
+  transform: none;
+}
+
+.js-motion .reveal-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--ease-premium), transform 0.6s var(--ease-premium);
+}
+
+.js-motion .reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-motion .reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===== Marca abstrata: dente + curva de sorriso ===== */
+.smile-mark {
+  width: 100%;
+  max-width: 22rem;
+  margin-inline: auto;
+  animation: smile-float 6s ease-in-out infinite;
+}
+
+.smile-mark__svg {
+  width: 100%;
+  height: auto;
+}
+
+.smile-mark__tooth {
+  stroke-dasharray: 620;
+  stroke-dashoffset: 620;
+  animation: smile-draw 3.6s var(--ease-premium) infinite;
+}
+
+.smile-mark__smile {
+  stroke-dasharray: 180;
+  stroke-dashoffset: 180;
+  animation: smile-draw 3.6s var(--ease-premium) infinite;
+  animation-delay: 0.9s;
+}
+
+.smile-mark__dot {
+  opacity: 0;
+  animation: smile-dot 3.6s ease-in-out infinite;
+}
+.smile-mark__dot--2 { animation-delay: 0.3s; }
+.smile-mark__dot--3 { animation-delay: 0.6s; }
+.smile-mark__dot--4 { animation-delay: 0.9s; }
+
+@keyframes smile-draw {
+  0% { stroke-dashoffset: var(--dash, 620); opacity: 0.4; }
+  35% { opacity: 1; }
+  55%, 85% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0.4; }
+}
+
+@keyframes smile-dot {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.55; }
+}
+
+@keyframes smile-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smile-mark { animation: none; }
+  .smile-mark__tooth,
+  .smile-mark__smile {
+    animation: none;
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  .smile-mark__dot { animation: none; opacity: 0.55; }
+}

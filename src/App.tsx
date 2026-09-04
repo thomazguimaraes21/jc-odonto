@@ -1,0 +1,41 @@
+import { useEffect } from "react";
+import About from "./components/About";
+import Cta from "./components/Cta";
+import Differentials from "./components/Differentials";
+import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import Location from "./components/Location";
+import Navbar from "./components/Navbar";
+import Services from "./components/Services";
+
+function App() {
+  // Só ativa os estados iniciais "invisíveis" do CSS depois que o React
+  // realmente montou — se o JS falhar antes disso, o conteúdo já nasce
+  // visível (ver .reveal-item em index.css).
+  useEffect(() => {
+    document.documentElement.classList.add("js-motion");
+  }, []);
+
+  return (
+    <>
+      <a
+        href="#topo"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-white"
+      >
+        Pular para o conteúdo
+      </a>
+      <Navbar />
+      <main>
+        <Hero />
+        <Services />
+        <About />
+        <Differentials />
+        <Location />
+        <Cta />
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+export default App;
