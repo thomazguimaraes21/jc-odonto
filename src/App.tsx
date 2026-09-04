@@ -1,12 +1,13 @@
 import { useEffect } from "react";
-import About from "./components/About";
+import BigWord from "./components/BigWord";
 import Cta from "./components/Cta";
-import Differentials from "./components/Differentials";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Location from "./components/Location";
 import Navbar from "./components/Navbar";
 import Services from "./components/Services";
+import Social from "./components/Social";
+import WhyUs from "./components/WhyUs";
 
 function App() {
   // Só ativa os estados iniciais "invisíveis" do CSS depois que o React
@@ -28,9 +29,10 @@ function App() {
       <main>
         <Hero />
         <Services />
-        <About />
-        <Differentials />
+        <WhyUs />
+        <BigWord />
         <Location />
+        <Social />
         <Cta />
       </main>
       <Footer />

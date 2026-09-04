@@ -47,12 +47,12 @@ export default function Navbar() {
             <span className="font-bold text-lg tracking-tight text-ink">JC Odonto</span>
           </a>
 
-          <nav className="hidden lg:flex items-center gap-8" aria-label="Navegação principal">
+          <nav className="hidden lg:flex items-center gap-9" aria-label="Navegação principal">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-ink transition-colors duration-200 hover:text-brand"
+                className="text-xs font-semibold uppercase tracking-[0.15em] text-ink transition-colors duration-200 hover:text-brand"
               >
                 {link.label}
               </a>
@@ -64,7 +64,7 @@ export default function Navbar() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center justify-center rounded-md bg-brand px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-brand-dark hover:-translate-y-0.5"
+              className="hidden sm:inline-flex items-center justify-center rounded-md bg-brand px-5 py-2.5 text-xs font-semibold uppercase tracking-wide text-white transition-all duration-200 hover:bg-brand-dark hover:-translate-y-0.5"
             >
               Agendar consulta
             </a>

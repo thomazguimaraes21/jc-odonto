@@ -5,26 +5,42 @@ export default function Services() {
   const ref = useStaggeredReveal<HTMLDivElement>();
 
   return (
-    <section id="servicos" className="py-24 lg:py-32">
+    <section id="servicos" className="py-24 lg:py-36">
       <div ref={ref} className="mx-auto max-w-7xl px-5 lg:px-10">
-        <div className="reveal-item max-w-lg">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">Serviços</p>
-          <h2 className="mt-4 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
-            Tratamentos oferecidos
+        <div className="reveal-item grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-end">
+          <h2 className="text-4xl font-black leading-[1.02] tracking-tight text-ink sm:text-5xl lg:text-6xl">
+            Tratamentos para
+            <br />
+            cuidar do seu sorriso.
           </h2>
+          <p className="max-w-sm text-sm text-muted lg:justify-self-end lg:text-right">
+            Consulte disponibilidade e valores diretamente pelo WhatsApp.
+          </p>
         </div>
 
-        <div className="mt-14 grid gap-x-10 gap-y-0 border-t border-border sm:grid-cols-2">
+        <div className="mt-16 border-t border-black/10">
           {SERVICES.map((s, i) => (
-            <div key={s.nome} className="reveal-item flex items-start gap-5 border-b border-border py-7">
-              <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border-2 border-brand text-sm font-bold text-brand">
+            <a
+              key={s.nome}
+              href={`https://wa.me/5511971313428?text=${encodeURIComponent(`Olá! Gostaria de saber mais sobre ${s.nome.toLowerCase()}.`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover-line-trigger reveal-item group grid grid-cols-[3rem_1fr_auto] items-center gap-4 border-b border-black/10 py-6 transition-colors duration-300 sm:grid-cols-[4rem_1fr_auto] lg:py-8"
+            >
+              <span className="font-mono text-sm text-muted-2 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-2 group-hover:text-brand">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <div>
-                <p className="text-lg font-bold text-ink">{s.nome}</p>
-                <p className="mt-1 text-sm text-muted">{s.descricao}</p>
+              <div className="min-w-0">
+                <p className="truncate text-2xl font-bold text-ink transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-3 group-hover:text-brand sm:text-3xl lg:text-4xl">
+                  {s.nome}
+                </p>
+                <p className="mt-1 hidden text-sm text-muted sm:block">{s.descricao}</p>
+                <div className="hover-line mt-3" />
               </div>
-            </div>
+              <span className="hidden text-xs font-semibold uppercase tracking-widest text-muted-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:inline">
+                Perguntar
+              </span>
+            </a>
           ))}
         </div>
       </div>

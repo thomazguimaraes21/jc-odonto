@@ -8,7 +8,7 @@ export default function Cta() {
   return (
     <section id="contato" className="bg-ink py-24 lg:py-32">
       <div ref={ref} className="mx-auto max-w-3xl px-5 text-center lg:px-10">
-        <h2 className="reveal-item text-3xl font-extrabold leading-tight text-white sm:text-4xl lg:text-5xl">
+        <h2 className="reveal-item text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
           Seu sorriso merece atenção aos detalhes.
         </h2>
         <p className="reveal-item mt-5 text-base text-white/70">

@@ -7,6 +7,15 @@ export default function SmileMark() {
   return (
     <div className="smile-mark" aria-hidden="true">
       <svg viewBox="0 0 320 360" fill="none" className="smile-mark__svg">
+        <circle
+          className="smile-mark__ring"
+          cx="160"
+          cy="180"
+          r="148"
+          stroke="#0077B6"
+          strokeWidth="1"
+          strokeDasharray="2 10"
+        />
         <circle className="smile-mark__dot" cx="64" cy="90" r="2.5" fill="#0077B6" />
         <circle className="smile-mark__dot smile-mark__dot--2" cx="256" cy="120" r="3" fill="#0077B6" />
         <circle className="smile-mark__dot smile-mark__dot--3" cx="242" cy="270" r="2" fill="#171717" />

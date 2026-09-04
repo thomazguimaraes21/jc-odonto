@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -120,6 +120,17 @@ img {
   50% { transform: translateY(-10px); }
 }
 
+.smile-mark__ring {
+  opacity: 0.35;
+  transform-origin: 160px 180px;
+  animation: smile-orbit 18s linear infinite;
+}
+
+@keyframes smile-orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .smile-mark { animation: none; }
   .smile-mark__tooth,
@@ -129,4 +140,32 @@ img {
     opacity: 1;
   }
   .smile-mark__dot { animation: none; opacity: 0.55; }
+  .smile-mark__ring { animation: none; }
+}
+
+/* ===== Indicador de scroll do hero ===== */
+.scroll-cue {
+  animation: scroll-cue-move 2.2s var(--ease-premium) infinite;
+}
+
+@keyframes scroll-cue-move {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue { animation: none; opacity: 0.7; }
+}
+
+/* ===== Linha que cresce no hover (lista de tratamentos) ===== */
+.hover-line {
+  height: 1px;
+  width: 0;
+  background: var(--color-brand);
+  transition: width 0.4s var(--ease-premium);
+}
+
+.hover-line-trigger:hover .hover-line,
+.hover-line-trigger:focus-visible .hover-line {
+  width: 100%;
 }

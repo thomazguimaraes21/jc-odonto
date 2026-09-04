@@ -21,8 +21,8 @@ export const MAPS_LINK = `https://www.google.com/maps/dir/?api=1&destination=${e
 
 export const NAV_LINKS = [
   { label: "Início", href: "#topo" },
-  { label: "A Clínica", href: "#sobre" },
-  { label: "Serviços", href: "#servicos" },
+  { label: "A Clínica", href: "#clinica" },
+  { label: "Tratamentos", href: "#servicos" },
   { label: "Localização", href: "#localizacao" },
   { label: "Contato", href: "#contato" },
 ];
